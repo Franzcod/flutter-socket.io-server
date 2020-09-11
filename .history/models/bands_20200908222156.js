@@ -1,0 +1,32 @@
+const Band = require("./band");
+
+
+class Bands{
+    constructor () {
+        this.bands = [];
+    }
+    ///Agregar Banda
+    addBnd(band = new Band()) {
+        this.bands.push(band);
+    }
+    ///Obteneer bandas
+    getBands(){
+        return this.bands;
+    }
+    ///Elimina banda
+    deleteBand(id =''){
+        this.bands = this.bands.filter(band => band.id !== id);
+        return this.bands;
+    }
+    ///Votar banda
+    voteBand(id=''){
+        this.bands = this.bands.map( band => {
+            if(this.bands.id == id) {
+                band.votes++;
+                return band;
+            }else{
+                return band;
+            }
+        } );
+    }
+}

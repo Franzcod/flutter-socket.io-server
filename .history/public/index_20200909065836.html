@@ -28,9 +28,8 @@
             console.log('mensaje: ', payload);
         });
 
-        socket.on('active-bands' , function(bands){
-            console.clear();
-            console.table(bands);
+        socket.on('active-bands' , function(payload){
+            console.log('mensaje: ', payload);
         });
 
 
